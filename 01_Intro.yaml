@@ -1,0 +1,8 @@
+DYNAMIC PROGRAMMING:
+	Properties required to use dynamic programming:
+		1.Optimal substructure: A problem is said to have optimal substructure if an optimal solution can be constructed from optimal solutions of its subproblems.
+		2. Overlapping subproblems: Recalculation of work several times.
+
+	Dynamic programming Problems:
+		1. Combinatoric Problems (How many- end goal is to count something)
+		2. Optimization (To maximize or minimize a given function)
