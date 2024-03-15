@@ -21,13 +21,17 @@ Frame Work to Solve a DP Problem
 */
 
 int climbStairs(int n){
-    int* dp = new int[n+1];
-    dp[0] = 1;
-    dp[1] = 1;
+    // int* dp = new int[n+1];
+    // dp[0] = 1;
+    // dp[1] = 1;
+
+    int ans_1 = 1, ans_2 = 1, ans;
     for(int i = 2; i <= n; i++){
-        dp[i] = dp[i-1] + dp[i-2];
+        ans = ans_1 + ans_2;
+        ans_2 = ans_1;
+        ans_1 = ans;
     }
-    return dp[n];
+    return ans;
 }
 
 int main(){
