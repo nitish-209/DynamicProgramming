@@ -6,3 +6,15 @@ DYNAMIC PROGRAMMING:
 	Dynamic programming Problems:
 		1. Combinatoric Problems (How many- end goal is to count something)
 		2. Optimization (To maximize or minimize a given function)
+
+	Memoization:
+		1. Memoization is a specific form of caching that is used in dynamic programming.
+		2. We can use the memoization technique where the use of the previously-calculated results comes into the picture.
+		3. Time-Memory Tradeoff.
+
+	Steps to solve Dynamic Programming Problem:
+		1. Define Objective Function
+		2. Identify base Cases
+		3. Recurrance Relation
+		4. Order of Computation
+		5. Location of the answer
