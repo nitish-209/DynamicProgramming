@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+#include<algorithm>
 #define ll long long int
 
 /*
@@ -28,14 +29,27 @@ Frame Work to Solve a DP Problem
 int climbStairs(int n, int k){
     ll* dp = new ll[n+1];
     dp[0] = 1;
-    dp[1] = 1;
-    for(int i = 2; i <= n; i++){
-        for(int j = i-1; j >= i-k; j--){
-            if(j < 0) break;
-            dp[i] += dp[j];
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= k; j++){
+            // dp[i] = dp[i-1] + dp[i-2] + dp[i-3] ... +dp[i-k]
+            if(i-j < 0) break;
+            dp[i] += dp[i-j];
         }
     }
     return dp[n];
+}
+
+int climbStairsOptimised(int n, int k){
+    ll* dp = new ll[k];
+    dp[0] = 1;
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j < k; j++){
+            // dp[i] = dp[i-1] + dp[i-2] + dp[i-3] ... +dp[i-k]
+            if(i-j < 0) break;
+            dp[i % k] += dp[(i-j) % k];
+        }
+    }
+    return dp[n%k];
 }
 
 int main(){
@@ -45,7 +59,8 @@ int main(){
     while(t--){
         cin >> n;
         cin >> k;
-        cout << climbStairs(n, k) << " ";
+        // cout << climbStairs(n, k) << " ";
+        cout << climbStairsOptimised(n, k) << " ";
     }
 
 }
