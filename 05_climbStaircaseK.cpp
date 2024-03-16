@@ -43,6 +43,8 @@ int climbStairsOptimised(int n, int k){
     ll* dp = new ll[k];
     dp[0] = 1;
     for(int i = 1; i <= n; i++){
+        // Now the loop is only upto k because j=k is the same location where we are storing the current ans.
+        // (i%k) = (i-j)%k  for j = k.
         for(int j = 1; j < k; j++){
             // dp[i] = dp[i-1] + dp[i-2] + dp[i-3] ... +dp[i-k]
             if(i-j < 0) break;
